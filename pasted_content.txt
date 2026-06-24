@@ -1,0 +1,127 @@
+Agis comme un développeur Front-End senior et un designer UI/UX spécialisé dans les applications web modernes.
+
+Crée une application web de découverte de films nommée "Movie Explorer" destinée à être publiée dans un portfolio de développeur.
+
+## Objectif
+
+Développer une application cinéma moderne permettant aux utilisateurs de rechercher, explorer et consulter des informations sur des films via une API publique de films (TMDB de préférence).
+
+L'application doit être entièrement fonctionnelle, responsive et prête à être déployée sur GitHub Pages.
+
+## Technologies
+
+Utiliser exclusivement :
+
+* HTML5
+* CSS3
+* JavaScript ES6+
+
+Ne pas utiliser de framework JavaScript.
+
+## Fonctionnalités principales
+
+### Recherche de films
+
+Permettre à l'utilisateur de :
+
+* rechercher un film par titre ;
+* lancer une recherche avec la touche Entrée ;
+* afficher les résultats dynamiquement.
+
+### Affichage des films
+
+Présenter chaque film sous forme de carte contenant :
+
+* l'affiche ;
+* le titre ;
+* l'année de sortie ;
+* la note moyenne ;
+* le genre principal.
+
+### Détails du film
+
+Au clic sur une carte :
+
+* ouvrir une fenêtre modale ;
+* afficher le synopsis ;
+* les genres ;
+* la date de sortie ;
+* la note ;
+* la durée ;
+* les acteurs principaux lorsque l'API le permet.
+
+### Favoris
+
+Permettre à l'utilisateur :
+
+* d'ajouter un film aux favoris ;
+* de retirer un film des favoris ;
+* de sauvegarder les favoris dans Local Storage ;
+* de retrouver ses favoris après rechargement de la page.
+
+### Mode sombre
+
+Ajouter :
+
+* un bouton de bascule clair/sombre ;
+* une sauvegarde du thème choisi dans Local Storage.
+
+## Interface utilisateur
+
+Créer une interface moderne inspirée des plateformes de streaming et applications SaaS.
+
+Le design doit inclure :
+
+* une barre de navigation élégante ;
+* une section héros attractive ;
+* une barre de recherche moderne ;
+* des cartes de films avec effets de survol ;
+* des animations fluides ;
+* des transitions cohérentes ;
+* une excellente hiérarchie visuelle.
+
+## Responsive Design
+
+L'application doit être optimisée pour :
+
+* mobile ;
+* tablette ;
+* ordinateur.
+
+Utiliser une approche mobile-first.
+
+## Accessibilité
+
+Respecter les bonnes pratiques :
+
+* HTML sémantique ;
+* labels explicites ;
+* attributs ARIA pertinents ;
+* navigation clavier ;
+* contrastes suffisants.
+
+## Performance
+
+* optimiser les appels API ;
+* afficher un état de chargement ;
+* gérer les erreurs API ;
+* afficher un message lorsqu'aucun résultat n'est trouvé.
+
+## Livrables
+
+Générer :
+
+1. Le code complet du projet.
+2. Une structure de fichiers claire (Html, css et javascript séparé).
+3. Un fichier README.md professionnel comprenant :
+
+   * présentation du projet ;
+   * fonctionnalités ;
+   * technologies utilisées ;
+   * installation ;
+   * déploiement ;
+   * captures d'écran à ajouter ultérieurement.
+4. Une spécification fonctionnelle courte du projet.
+5. Les instructions de déploiement sur GitHub Pages.
+
+Le résultat final doit avoir la qualité visuelle et fonctionnelle d'un projet portfolio Front-End moderne.

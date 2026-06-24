@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Movie Explorer</h1>
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle" class="theme-toggle">
+                <label for="theme-toggle"></label>
+            </div>
+        </nav>
+        <section class="hero">
+            <h2>Découvrez des films incroyables</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Rechercher un film...">
+                <button id="search-button">Rechercher</button>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="movie-results" id="movie-results">
+            <!-- Les cartes de films seront insérées ici -->
+        </section>
+    </main>
+
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title"></h3>
+            <img id="modal-poster" src="" alt="Affiche du film">
+            <p id="modal-synopsis"></p>
+            <p><strong>Genres:</strong> <span id="modal-genres"></span></p>
+            <p><strong>Date de sortie:</strong> <span id="modal-release-date"></span></p>
+            <p><strong>Note:</strong> <span id="modal-rating"></span></p>
+            <p><strong>Durée:</strong> <span id="modal-runtime"></span></p>
+            <p><strong>Acteurs principaux:</strong> <span id="modal-actors"></span></p>
+            <button id="add-to-favorites">Ajouter aux favoris</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
