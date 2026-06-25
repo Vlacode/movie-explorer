@@ -125,6 +125,9 @@ Pour vérifier que votre site est correctement déployé:
     *   Recherche de films.
     *   Affichage des détails d'un film.
     *   Basculement du thème.
+    *   Ajout et suppression d'un favori.
+    *   Consultation de la section Historique.
+    *   Notifications toast lors des actions.
 
 ## 📝 Bonnes Pratiques
 

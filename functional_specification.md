@@ -26,7 +26,11 @@ Lorsqu'un utilisateur cliquera sur une carte de film, une fenêtre modale s'affi
 
 L'application offrira la possibilité d'ajouter ou de retirer des films d'une liste de favoris personnelle. Un bouton dédié à cette action sera intégré dans la modale des détails du film. L'état des favoris sera sauvegardé de manière persistante dans le `Local Storage` du navigateur, permettant aux utilisateurs de retrouver leur liste après un rechargement de la page.
 
-### 3.5. Mode Sombre
+### 3.5. Historique des Favoris
+
+Chaque action d'ajout ou de suppression d'un film des favoris sera enregistrée dans un journal d'historique. L'historique affichera les actions dans l'ordre chronologique inverse (les plus récentes en premier), avec la date et l'heure de chaque action. Les entrées d'historique seront sauvegardées dans le `Local Storage` et limitées aux 50 dernières actions.
+
+### 3.6. Mode Sombre
 
 Une fonctionnalité de bascule entre un thème clair et un thème sombre sera implémentée. Un interrupteur (toggle switch) situé dans la barre de navigation permettra de changer l'apparence de l'application. Le thème sélectionné par l'utilisateur sera enregistré dans le `Local Storage` et appliqué automatiquement lors des visites ultérieures.
 
@@ -45,6 +49,8 @@ Le développement respectera les bonnes pratiques des Web Content Accessibility 
 ## 7. Performance et Gestion des Erreurs
 
 L'application sera conçue pour une performance optimale, notamment par une gestion efficace des appels à l'API TMDB. Un état de chargement (`loading state`) sera affiché pendant les requêtes API pour informer l'utilisateur. La gestion des erreurs inclura l'affichage de messages clairs en cas d'échec des appels API et un message spécifique lorsque aucune correspondance n'est trouvée pour une recherche.
+
+La persistance `Local Storage` sera utilisée pour les favoris, l'historique et le thème. Le système d'historique devra restaurer les données au rechargement de la page et limiter l'historique aux 50 dernières actions. Des notifications toast seront utilisées pour informer l'utilisateur des actions réussies et des erreurs.
 
 ## 8. Livrables
 

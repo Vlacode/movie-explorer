@@ -3,48 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Explorer</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Movie Explorer - Découvrez et explorez des films avec une interface moderne inspirée de Netflix et IMDb">
+    <meta name="theme-color" content="#0f0f0f">
+    <title>Movie Explorer - Découvrez les Meilleurs Films</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Movie Explorer</h1>
-            <div class="theme-switch">
-                <input type="checkbox" id="theme-toggle" class="theme-toggle">
-                <label for="theme-toggle"></label>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <h1 class="logo">🎬 Movie Explorer</h1>
             </div>
-        </nav>
-        <section class="hero">
-            <h2>Découvrez des films incroyables</h2>
-            <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Rechercher un film...">
-                <button id="search-button">Rechercher</button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link active" data-section="home">Accueil</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-section="popular">Films Populaires</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-section="favorites">Mes Favoris</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-section="history">Historique</a></li>
+            </ul>
+            <div class="navbar-controls">
+                <div class="theme-switch">
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Basculer le mode sombre">
+                    <label for="theme-toggle" class="theme-label"></label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+        <div class="hero-content">
+            <h2 class="hero-title">Découvrez l'Univers du Cinéma</h2>
+            <p class="hero-subtitle">Explorez des milliers de films, trouvez vos favoris et plongez dans des histoires captivantes</p>
+            <div class="hero-search">
+                <input type="text" id="search-input" class="search-input" placeholder="Rechercher un film, un acteur..." aria-label="Rechercher un film">
+                <button id="search-button" class="search-btn" aria-label="Lancer la recherche">
+                    <span>🔍 Rechercher</span>
+                </button>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home-section" class="section active">
+            <div class="section-header">
+                <h2>Films Populaires en Ce Moment</h2>
+                <p class="section-subtitle">Les films les plus regardés cette semaine</p>
+            </div>
+            <div class="movies-grid" id="home-movies"></div>
+        </section>
+
+        <!-- Popular Section -->
+        <section id="popular-section" class="section">
+            <div class="section-header">
+                <h2>Tous les Films Populaires</h2>
+                <p class="section-subtitle">Explorez notre sélection complète des films les plus populaires</p>
+            </div>
+            <div class="movies-grid" id="popular-movies"></div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section id="favorites-section" class="section">
+            <div class="section-header">
+                <h2>Mes Films Favoris</h2>
+                <p class="section-subtitle" id="favorites-subtitle">Vous n'avez pas encore ajouté de favoris</p>
+            </div>
+            <div class="movies-grid" id="favorites-movies"></div>
+            <div id="empty-favorites" class="empty-state">
+                <div class="empty-icon">🎬</div>
+                <h3>Aucun Film Favori</h3>
+                <p>Commencez par explorer les films populaires et ajoutez vos préférés à cette liste!</p>
+                <a href="#" class="btn-primary" data-section="popular">Découvrir des Films</a>
             </div>
         </section>
-    </header>
 
-    <main>
-        <section class="movie-results" id="movie-results">
-            <!-- Les cartes de films seront insérées ici -->
+        <!-- History Section -->
+        <section id="history-section" class="section">
+            <div class="section-header">
+                <h2>Historique des Favoris</h2>
+                <p class="section-subtitle">Suivez chaque ajout et suppression de film dans vos favoris.</p>
+            </div>
+            <div class="history-container">
+                <ul id="history-list" class="history-list"></ul>
+                <div id="empty-history" class="empty-state">
+                    <div class="empty-icon">🕒</div>
+                    <h3>Aucun historique pour le moment</h3>
+                    <p>Ajoutez ou retirez un film de vos favoris pour créer votre historique.</p>
+                    <a href="#" class="btn-primary" data-section="popular">Voir les films populaires</a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <div id="movie-modal" class="modal">
+    <!-- Movie Detail Modal -->
+    <div id="movie-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-overlay"></div>
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h3 id="modal-title"></h3>
-            <img id="modal-poster" src="" alt="Affiche du film">
-            <p id="modal-synopsis"></p>
-            <p><strong>Genres:</strong> <span id="modal-genres"></span></p>
-            <p><strong>Date de sortie:</strong> <span id="modal-release-date"></span></p>
-            <p><strong>Note:</strong> <span id="modal-rating"></span></p>
-            <p><strong>Durée:</strong> <span id="modal-runtime"></span></p>
-            <p><strong>Acteurs principaux:</strong> <span id="modal-actors"></span></p>
-            <button id="add-to-favorites">Ajouter aux favoris</button>
+            <button class="modal-close" aria-label="Fermer la modale">&times;</button>
+            <div class="modal-body">
+                <div class="modal-poster-section">
+                    <img id="modal-poster" src="" alt="Affiche du film" class="modal-poster">
+                    <div class="modal-rating-badge">
+                        <span class="rating-value" id="modal-rating-value">0</span>
+                        <span class="rating-max">/10</span>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title" class="modal-title"></h2>
+                    <div class="modal-meta">
+                        <span class="meta-item" id="modal-release-date"></span>
+                        <span class="meta-item" id="modal-runtime"></span>
+                        <span class="meta-item" id="modal-genres"></span>
+                    </div>
+                    <p id="modal-synopsis" class="modal-synopsis"></p>
+                    <div class="modal-actors">
+                        <h3>Acteurs Principaux</h3>
+                        <p id="modal-actors"></p>
+                    </div>
+                    <button id="add-to-favorites" class="btn-favorite" aria-pressed="false">
+                        <span class="btn-icon">🤍</span>
+                        <span class="btn-text">Ajouter aux Favoris</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Skeleton Loader Template -->
+    <template id="skeleton-template">
+        <div class="movie-card skeleton">
+            <div class="skeleton-poster"></div>
+            <div class="skeleton-content">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-text short"></div>
+            </div>
+        </div>
+    </template>
+
+    <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+    <script src="js/script.js"></script>
 </body>
 </html>
